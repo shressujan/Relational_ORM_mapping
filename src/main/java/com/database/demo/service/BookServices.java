@@ -5,6 +5,8 @@ import com.database.demo.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookServices implements DatabaseServices{
 
@@ -24,6 +26,11 @@ public class BookServices implements DatabaseServices{
     @Override
     public void delete(int id) {
         br.deleteById(id);
+    }
+
+    @Override
+    public List<Book> getAll() {
+        return br.findAll();
     }
 
 }

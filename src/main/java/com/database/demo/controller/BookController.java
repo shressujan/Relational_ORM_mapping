@@ -28,4 +28,10 @@ public class BookController {
         bs.delete(id);
     }
 
+
+    @PostMapping("/add/{authorId}")
+    public void addBook (@RequestBody Book book, @PathVariable String authorId) {
+        bs.add(book);
+    }
+
 }
