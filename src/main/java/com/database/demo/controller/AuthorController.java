@@ -5,6 +5,8 @@ import com.database.demo.service.AuthorServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
@@ -25,6 +27,11 @@ public class AuthorController {
     @DeleteMapping("/{id}")
     public void deleteAuthor(@PathVariable int id) {
         as.delete(id);
+    }
+
+    @GetMapping("/all")
+    public List<Author> getAuthors() {
+        return as.getAll();
     }
 
 }

@@ -5,6 +5,8 @@ import com.database.demo.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorServices implements DatabaseServices {
 
@@ -25,6 +27,11 @@ public class AuthorServices implements DatabaseServices {
     @Override
     public void delete(int id) {
         ar.deleteById(id);
+    }
+
+    @Override
+    public List<Author> getAll() {
+        return ar.findAll();
     }
 
 }
